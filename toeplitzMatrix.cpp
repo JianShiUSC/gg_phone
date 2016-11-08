@@ -20,6 +20,8 @@ bool toeplitzMatrix(vector<vector<int>>& matrix) {
     return true;
 }
 
+
+// simplify version
 bool toeplitzMatrix(vector<vector<int>>& matrix) {
     for(int i = 0; i < matrix.size() - 1; i++) {
         for(int j = 0; j < matrix[0].size() - 1; j++) {
