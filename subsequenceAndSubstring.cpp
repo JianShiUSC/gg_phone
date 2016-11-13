@@ -1,3 +1,4 @@
+// 给你两个string s和t, 问s是否能删除小于N个字符，使得结果是t的一个子串，比如 "book, aook", N = 1, return true;
 bool subsequenceAndSubstring(string s, string t, int N) {
     int t_start = 0;
     while(t_start < t.size()) {
