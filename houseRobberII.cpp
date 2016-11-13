@@ -24,3 +24,46 @@ public:
         return dp2;
     }
 };
+
+
+
+// house robber 1 : 一个int[] A, 输出不相邻的elements组成的最大的sum
+// follow up negative number
+
+class Solution {
+public:
+    int rob(vector<int>& nums) {
+        int size = nums.size();
+        if(size == 0) return 0;
+        int dp1 = nums[0];
+        if(size == 1)  return dp1;
+        int dp2 = max(nums[0], nums[1]);
+
+        for(int i = 2; i < size; i++) {
+            int temp = dp2;
+            dp2 = max(dp1 + nums[i], dp2);
+            dp1 = temp;
+        }
+        return dp2;
+    }
+};
+
+
+
+class Solution {
+public:
+    int rob(vector<int>& nums) {
+        int size = nums.size();
+        if(size == 0) return 0;
+        int dp1 = max(nums[0], 0);
+        if(size == 1)  return dp1;
+        int dp2 = max(dp1, nums[1]);
+
+        for(int i = 2; i < size; i++) {
+            int temp = dp2;
+            dp2 = max(dp1 + nums[i], dp2);
+            dp1 = temp;
+        }
+        return dp2;
+    }
+};
